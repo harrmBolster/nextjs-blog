@@ -3,7 +3,7 @@ import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
-import BlogDate from '../components/date';
+import Date from '../components/date';
 
 
 export async function getStaticProps() {
@@ -17,6 +17,7 @@ export async function getStaticProps() {
 
 
 export default function Home({ allPostsData }) {
+  console.log(allPostsData);
   return (
     <Layout home>
       <Head>
@@ -37,7 +38,8 @@ export default function Home({ allPostsData }) {
               <Link href={`/posts/${id}`}>{title}</Link>
               <br />
               <small className={utilStyles.lightText}>
-                <BlogDate dateString={date} />
+                {console.log(date)}
+                <Date dateString={date} />
               </small>
             </li>
           ))}
