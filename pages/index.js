@@ -37,7 +37,7 @@ export default function Home({ allPostsData }) {
               <Link href={`/posts/${id}`}>{title}</Link>
               <br />
               <small className={utilStyles.lightText}>
-                <Date dateString={date} />
+                <BlogDate dateString={date} />
               </small>
             </li>
           ))}
